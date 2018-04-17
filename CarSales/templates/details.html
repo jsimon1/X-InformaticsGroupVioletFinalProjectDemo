@@ -5,9 +5,15 @@
     <h5 class="modal-title">{{ car.car_model }}</h5>
 </div>
 <div class="modal-body">
-    ...
+    <p><strong>Make & Model:</strong> {{ car.car_make }} {{ car.car_model }}</p>    
+    <p><strong>Year:</strong> {{ car.car_year }}</p>
+    <p><strong>Price:</strong> $ {{ car.car_price }}</p>
+    <hr>
+    <p><strong>Dealership:</strong> {{ car.dealer_name }}</p>
+    <p><strong>Zip:</strong> {{ car.dealer_zip }}</p>
+    <p><strong>Web:</strong> <a href="{{car.dealer_web}}" target="_blank">{{ car.dealer_web }}</a></p>    
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-    <button type="button" class="btn btn-primary">See in Dealership Webpage</button>
+    <a href="{{car.car_web}}" target="_blank" class="btn btn-primary" role="button" aria-disabled="true">See in Dealership</a>
 </div>

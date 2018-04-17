@@ -13,12 +13,15 @@
         <div class="carousel-inner">
             {% for car in picked_cars %}
             <div {% if forloop.counter0 == 0 %} class="item active" {% else %} class="item" {% endif %}>
-                {% thumbnail car.car_image "1500x600" crop="center" as im %}
+                {% thumbnail car.car_image "1500x550" crop="center" as im %}
                 <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="img-responsive" alt="Car Thumb"> {% endthumbnail %}
-                <div class="carousel-caption d-none d-md-block">
-                    <h3>Featuring:</h3>
-                    <h4>{{ car.car_year }}, {{car.car_make}} {{car.car_model}}</h4>                    
-                </div>
+                
+                <a href="{{car.car_web}}" target="_blank">                
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Featuring: {{ car.car_year }}, {{car.car_make}} {{car.car_model}}</h3>
+                        <h4>Click to see in Dealership!</h4>                    
+                    </div>
+                </a>
             </div>
             {% endfor %}
         </div>

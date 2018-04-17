@@ -1,7 +1,5 @@
 * {
-    -webkit-border-radius: 0 !important;
-    -moz-border-radius: 0 !important;
-    
+    border-radius: 0 !important;
 }
 
 .navbar {
@@ -9,9 +7,9 @@
 }
 
 .jumbotron-fluid {
-    padding-top:0px !important;
-    padding-bottom:0px !important;
-    margin-bottom: 0px;  
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    margin-bottom: 0px;
     background-color: lightgray !important;
 }
 
@@ -19,13 +17,13 @@
     margin-bottom: 10px;
 }
 
-.carousel-caption {             
+.carousel-caption {
     right: 0%;
     left: 0%;
     padding: 5px;
-    margin-bottom: 10px;    
+    margin-bottom: 10px;
     background-color: rgba(0, 0, 0, 0.4);
-    text-align: center;             
+    text-align: center;
 }
 
 .carousel-indicators {
@@ -33,12 +31,14 @@
 }
 
 /* Add a gray background color and some padding to the footer */
+
 footer {
     background-color: #f2f2f2;
     padding: 25px;
 }
 
 /* to center the pagination row */
+
 .row-centered {
     text-align: center;
 }
@@ -46,10 +46,10 @@ footer {
 .col-centered {
     display: inline-block;
     float: none;
-    
+
     /* reset the text-align */
     text-align: left;
-    
+
     /* inline-block space fix */
     margin-right: -4px;
 }
