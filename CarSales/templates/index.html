@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% load thumbnail %} {% block content %}
+
+
+
+{% for car in car_list %}
+<div class="modal" id="detailsModal{{car.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+
+
+<div class="col-sm-4 ">
+    <div class="panel panel-primary">
+        <div class="panel-heading">{{ car.car_year }}, {{ car.car_make }} {{ car.car_model }}</div>
+        <div class="panel-body">
+            <a href="{% url 'cars:details' car.id %}" data-toggle="modal" data-target="#detailsModal{{car.id}}">
+                {% thumbnail car.car_image "500x350" crop="center" as im %}
+                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="img-responsive" alt="Car Thumb">
+                {% endthumbnail %}
+            </a>
+        </div>
+        <div class="panel-footer">
+            <i style="font-size:14px" class="fa fa-dollar"></i> {{ car.car_price }} Link
+        </div>
+    </div>
+</div>
+{% endfor %} {% endblock %}

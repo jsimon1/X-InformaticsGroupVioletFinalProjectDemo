@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block title %}
+    <title>Car Sales</title>
+    {% endblock %}
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Add additional CSS in static file -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+
+<body>
+
+    <div class="jumbotron-fluid">
+        <div class="row row-centered">
+            <div class="container text-left">
+                <h1>Online Store</h1>
+                <p>Mission, Vission & Values</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row row-centered">
+            {% include "carousel.html" %}
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+    {% include "pagination.html" %}
+    {% include "details.html" %}
+
+    <footer class="container-fluid text-center">
+        <p>Online Store Copyright</p>
+    </footer>
+
+</body>
+
+</html>
