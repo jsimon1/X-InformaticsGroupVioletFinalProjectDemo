@@ -1,13 +1,18 @@
 # X-InformaticsGroupVioletFinalProjectDemo
 
-Requirements:
 
+### Prerequisites
+
+What things you need to install
+
+```
 Python 3.6
-
-pip
+Pip
+```
 
 Other packages:
 
+```
 pip install Django
-
 pip install sorl-thumbnail
+```
