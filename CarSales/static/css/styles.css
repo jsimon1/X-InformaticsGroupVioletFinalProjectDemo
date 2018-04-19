@@ -13,10 +13,6 @@
     background-color: lightgray !important;
 }
 
-.carousel {
-    margin-bottom: 10px;
-}
-
 .carousel-caption {
     right: 0%;
     left: 0%;
@@ -28,6 +24,11 @@
 
 .carousel-indicators {
     margin-bottom: -15px;
+}
+
+.well {
+    margin-top: -10px;
+    background-color: lightgray;
 }
 
 /* Add a gray background color and some padding to the footer */

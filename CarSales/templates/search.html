@@ -1,0 +1,80 @@
+<div class="well">
+    <div class="row">
+
+        <form id="searchform" action="{% url 'cars:index' %}" method="get" accept-charset="utf-8">
+            <div class="form-row align-items-center">
+                <div class="form-group col-lg-2">
+                    <select class="form-control" id="carmake" name="carmake">
+                        <option selected disabled>Car Make</option>
+                        <option disabled>──────────</option>
+                        <option value="Honda">Honda</option>
+                        <option value="Mazda">Mazda</option>
+                        <option value="Subaru">Subaru</option>            
+                    </select>
+                </div>
+
+                <div class="form-group col-lg-2">
+                    <select class="form-control" id="carmodel" name="carmodel">
+                        <option selected disabled>Car Model</option>
+                        <option disabled>──────────</option>
+                        <option value="Civic Sport">Civic Sport</option>
+                        <option value="Accord Touring">Accord Touring</option>
+                        <option value="Miata RF">Miata RF</option>
+                        <option value="Impreza Sport">Impreza Sport</option>                        
+                        <option value="BRF">BRF</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-lg-2" id="caryear" name="caryear">
+                    <select class="form-control">
+                        <option value="" selected disabled>Car Year</option>
+                        <option disabled>──────────</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-lg-2">
+                    <select class="form-control" id="carprice" name="carprice">            
+                        <option disabled selected>Price Range</option> 
+                        <option disabled>──────────</option>
+                        <option value="1">Below $5000</option>
+                        <option value="2">$5000 - $10000</option>
+                        <option value="3">$10000 - $15000</option>
+                        <option value="4">Above $15000</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group col-lg-2">
+                    <select class="form-control" id="zip" name="zip">
+                         <option selected disabled>Area Zip</option>
+                         <option disabled>──────────</option>
+                         <option value="12180">12180</option>
+                         <option value="12144">12144</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-lg-2">
+                    <select class="form-control" id="dealer" name="dealer">
+                        <option selected disabled>Dealership</option>
+                        <option disabled>──────────</option>
+                        <option value="Rensselear Honda">Rensselear Honda</option>
+                        <option value="Carbone Subaru">Carbone Subaru</option>
+                        <option value="Coley Mazda">Coley Mazda</option>             
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="form-row align-items-center">
+                <div class="form-group col-lg-10">                    
+                    <input id="desc" name="desc" placeholder="Search for additional car features (e.g. cruize control)... " class="form-control" type="text">
+                </div>
+                <div class="form-group col-lg-2"> 
+                    <button type="submit" class="btn btn-primary btn-block"><span class="icon-search">Search!</span></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
