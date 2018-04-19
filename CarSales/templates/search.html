@@ -1,4 +1,19 @@
-<div class="well">
+
+{% if search == True %}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        // Handler for .ready() called.
+        $('html, body').animate({
+            scrollTop: $('#search').offset().top
+        }, 'fast');
+    });
+</script>
+
+{% endif %}
+
+
+<div class="well" id="search" name="search">
     <div class="row">
 
         <form id="searchform" action="{% url 'cars:index' %}" method="get" accept-charset="utf-8">
@@ -7,9 +22,9 @@
                     <select class="form-control" id="carmake" name="carmake">
                         <option selected disabled>Car Make</option>
                         <option disabled>──────────</option>
-                        <option value="Honda">Honda</option>
-                        <option value="Mazda">Mazda</option>
-                        <option value="Subaru">Subaru</option>            
+                        {% for choice in makes %}
+                        <option value="{{ choice.0 }}">{{ choice.0 }}</option>
+                        {% endfor %}
                     </select>
                 </div>
 
@@ -17,11 +32,9 @@
                     <select class="form-control" id="carmodel" name="carmodel">
                         <option selected disabled>Car Model</option>
                         <option disabled>──────────</option>
-                        <option value="Civic Sport">Civic Sport</option>
-                        <option value="Accord Touring">Accord Touring</option>
-                        <option value="Miata RF">Miata RF</option>
-                        <option value="Impreza Sport">Impreza Sport</option>                        
-                        <option value="BRF">BRF</option>
+                        {% for choice in models %}
+                        <option value="{{ choice.0 }}">{{ choice.0 }}</option>
+                        {% endfor %}
                     </select>
                 </div>
 
@@ -29,8 +42,9 @@
                     <select class="form-control">
                         <option value="" selected disabled>Car Year</option>
                         <option disabled>──────────</option>
-                        <option value="2018">2018</option>
-                        <option value="2017">2017</option>
+                        {% for choice in years %}
+                        <option value="{{ choice.0 }}">{{ choice.0 }}</option>
+                        {% endfor %}
                     </select>
                 </div>
 
@@ -47,11 +61,12 @@
 
 
                 <div class="form-group col-lg-2">
-                    <select class="form-control" id="zip" name="zip">
-                         <option selected disabled>Area Zip</option>
+                    <select class="form-control" id="area" name="area">
+                         <option selected disabled>Area</option>
                          <option disabled>──────────</option>
-                         <option value="12180">12180</option>
-                         <option value="12144">12144</option>
+                         {% for choice in areas %}
+                         <option value="{{ choice.0 }}">{{ choice.0 }}</option>
+                         {% endfor %}
                     </select>
                 </div>
 
@@ -59,20 +74,31 @@
                     <select class="form-control" id="dealer" name="dealer">
                         <option selected disabled>Dealership</option>
                         <option disabled>──────────</option>
-                        <option value="Rensselear Honda">Rensselear Honda</option>
-                        <option value="Carbone Subaru">Carbone Subaru</option>
-                        <option value="Coley Mazda">Coley Mazda</option>             
+                        {% for choice in dealers %}
+                        <option value="{{ choice.0 }}">{{ choice.0 }}</option>
+                        {% endfor %}            
                     </select>
                 </div>
 
             </div>
 
             <div class="form-row align-items-center">
-                <div class="form-group col-lg-10">                    
-                    <input id="desc" name="desc" placeholder="Search for additional car features (e.g. cruize control)... " class="form-control" type="text">
+                <div class="form-group col-lg-2 ">  
+                    <select class="form-control" id="sort" name="sort">
+                        <option selected disabled>Sort by</option>
+                        <option disabled>──────────</option>
+                        <option value="1">Price: low - high</option>
+                        <option value="2">Price: high - low</option>
+                        <option value="3">Year: newest</option>
+                        <option value="4">Year: oldest</option>
+                    </select>                    
+                </div>  
+                
+                <div class="form-group col-lg-8">                    
+                    <input id="desc" name="desc" value="" placeholder="Search for additional car features (e.g. cruize control)... " class="form-control" type="text">
                 </div>
                 <div class="form-group col-lg-2"> 
-                    <button type="submit" class="btn btn-primary btn-block"><span class="icon-search">Search!</span></button>
+                    <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-search"> </i> Search! </button>
                 </div>
             </div>
         </form>

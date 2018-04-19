@@ -1,5 +1,6 @@
 {% extends "base.html" %} {% load thumbnail %} {% block content %} 
 
+{% if car_list%}
 
 {% for car in car_list %}
 
@@ -14,7 +15,7 @@
             </a>
         </div>
         <div class="panel-footer">
-            <span style="vertical-align: middle; font-size:14px;" class="align-middle">
+            <span style="vertical-align: middle; font-size:15px;" class="align-middle">
                 <i class="fa fa-usd"></i> {{ car.car_price }}                
             </span>
 
@@ -33,4 +34,16 @@
     </div>
 </div>
 
-{% endfor %} {% endblock %}
+{% endfor %} 
+
+{% else %}
+
+<div class="row row-centered">
+    <h3>No cars found matching your criteria.</h3>
+    <br/>
+    <br/>
+</div>
+
+{% endif %}
+
+{% endblock %}

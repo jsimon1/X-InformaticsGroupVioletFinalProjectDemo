@@ -1,3 +1,5 @@
+# helper file to organize available choises.
+
 MAKE_CHOICES = [
     ('Honda', 'Honda'),
     ('Mazda', 'Mazda'),
@@ -12,9 +14,9 @@ MODEL_CHOICES = [
     ('Accord Touring', 'Accord Touring'),
 ]
 
-ZIP_CHOICES = [
-    (12180, 12180), #Rensselaer Honda and Carbone Subaru
-    (12144, 12144),   #Cooley Mazda
+AREA_CHOICES = [
+    ('Troy', 'Troy'), #Rensselaer Honda, Cooley Mazda and Carbone Subaru
+    ('Albany', 'Albany'),   
 ]
 
 DEALER_CHOICES = [
