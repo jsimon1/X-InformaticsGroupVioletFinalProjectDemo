@@ -3,32 +3,32 @@
         <div class="row row-centered">
             <div class="ccol-md-1 col-centered">
                 <nav>
-                    <ul class="pagination">
+                    <ul class="pagination paginater1">
                         {% if page_obj.has_previous %}
-                        <li>
-                            <a href="?page={{ page_obj.previous_page_number }}">
+                        <li class="paginater2">
+                            <a class="paginater3" href="?page={{ page_obj.previous_page_number }}">
             <span>Previous</span>
           </a>
                         </li>
                         {% else %}
-                        <li class="disabled">
-                            <a href="#">
+                        <li class="dispage disabled">
+                            <a class="paginater3" href="#">
             <span>Previous</span>
           </a>
                         </li>
                         {% endif %} {% for page in paginator.page_range %}
-                        <li {% if page == page_obj.number %} class="active" {% endif %}>
-                            <a href="?page={{ page }}">{{ page }}</a>
+                        <li {% if page == page_obj.number %} class="active" {% else %} class="inactive" {% endif %}>
+                            <a class="paginater3" href="?page={{ page }}">{{ page }}</a>
                         </li>
                         {% endfor %} {% if page_obj.has_next %}
-                        <li>
-                            <a href="?page={{ page_obj.next_page_number }}">
+                        <li class="paginater2">
+                            <a class="paginater3" href="?page={{ page_obj.next_page_number }}">
             <span>Next</span>
           </a>
                         </li>
                         {% else %}
-                        <li {% if not page_obj.has_next %}class="disabled" {% endif %}>
-                            <a href="#">
+                        <li {% if not page_obj.has_next %} class="dispage disabled" {% endif %}>
+                            <a class="paginater3" href="#">
             <span>Next</span>
           </a>
                         </li>

@@ -9,7 +9,7 @@
         <div class="panel-heading">{{ car.car_year }}, {{ car.car_make }} {{ car.car_model }}</div>
         <div class="panel-body">
             <a href="{% url 'cars:details' car.id %}" data-toggle="modal" data-target="#detailsModal{{car.id}}">
-                {% thumbnail car.car_image "500x350" crop="center" as im %}
+                {% thumbnail car.car_image "650x500" crop="center" as im %}
                 <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="img-responsive" alt="Car Thumb">
                 {% endthumbnail %}
             </a>
@@ -19,8 +19,8 @@
                 <i class="fa fa-usd"></i> {{ car.car_price }}                
             </span>
 
-            <a href="{% url 'cars:details' car.id %}" data-toggle="modal" data-target="#detailsModal{{car.id}}" class="btn btn-primary btn-sm pull-right" role="button" aria-disabled="true">See Details</a>
-            <a href="{{car.car_web}}" target="_blank" class="btn btn-secondary btn-sm pull-right" role="button" aria-disabled="true">See in Dealership</a>
+            <a href="{% url 'cars:details' car.id %}" data-toggle="modal" data-target="#detailsModal{{car.id}}" class="btn btn-primary btn-sm pull-right btn-search-car" role="button" aria-disabled="true">Details</a>
+            <a href="{{car.car_web}}" target="_blank" class="btn btn-primary btn-sm pull-right btn-search-car" role="button" aria-disabled="true">Dealer's Webpage</a>
             <div class="clearfix"></div>
         </div>
     </div>

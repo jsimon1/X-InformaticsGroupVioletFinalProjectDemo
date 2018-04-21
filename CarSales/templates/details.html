@@ -1,6 +1,6 @@
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                    <span class="close-x" >&times;</span>
                 </button>
     <h5 class="modal-title">{{ car.car_model }}</h5>
 </div>
@@ -9,12 +9,12 @@
     <p><strong>Year:</strong> {{ car.car_year }}</p>
     <p><strong>Price:</strong> <i class="fa fa-usd"></i> {{ car.car_price }}</p>
     <p><strong>Description:</strong> {{ car.car_description }}</p>
-    <hr>
+    <hr class="{color: #fff; }">
     <p><strong>Dealership:</strong> {{ car.dealer_name }}</p>
     <p><strong>Area:</strong> {{ car.dealer_area }}</p>
-    <p><strong>Web:</strong> <a href="{{car.dealer_web}}" target="_blank">{{ car.dealer_web }}</a></p>    
+    <p><strong>Web:</strong> <a class="detail-link" href="{{car.dealer_web}}" target="_blank">{{ car.dealer_web }}</a></p>    
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-    <a href="{{car.car_web}}" target="_blank" class="btn btn-primary" role="button" aria-disabled="true">See in Dealership</a>
+    <a href="{{car.car_web}}" target="_blank" class="btn btn-primary" role="button" aria-disabled="true">Dealer's Webpage</a>
 </div>

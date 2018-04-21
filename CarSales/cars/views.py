@@ -9,15 +9,18 @@ from .models import Car
 import functools
 import operator
 
+#sgf
+
 class IndexView(ListView):
     model = Car
-    paginate_by = 10
+    paginate_by = 3
     search = False
     template_name = 'index.html' 
     
     # override of get_queryset
     def get_queryset(self):
-        result = Car.objects.all()   
+        #default sorting newest first
+        result = Car.objects.all().order_by('-car_year')  
                         
         # Handle sorting input              
         query = self.request.GET.get('sort')            
@@ -84,7 +87,7 @@ class IndexView(ListView):
             result = result.filter(Q(dealer_name__exact = query))
                                 
         # return cars
-        return result
+        return result        
         
     # override
     def get_context_data(self, **kwargs):
