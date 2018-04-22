@@ -1,6 +1,4 @@
-from django_filters.views import FilterView
 from django.urls import path
-from .models import Car
 from . import views
 
 app_name = 'cars'

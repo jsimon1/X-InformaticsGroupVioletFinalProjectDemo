@@ -1,15 +1,10 @@
-from django.shortcuts import get_object_or_404, render, redirect
 from django.views.generic.list import ListView
-from django.http import HttpResponseRedirect
 from django.views import generic
-from django.urls import reverse
 from django.db.models import Q
 from . import choices as ch
 from .models import Car
 import functools
 import operator
-
-#sgf
 
 class IndexView(ListView):
     model = Car
