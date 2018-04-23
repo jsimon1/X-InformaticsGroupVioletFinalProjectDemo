@@ -8,7 +8,7 @@ import operator
 
 class IndexView(ListView):
     model = Car
-    paginate_by = 3
+    paginate_by = 9
     search = False
     template_name = 'index.html' 
     
@@ -61,13 +61,13 @@ class IndexView(ListView):
         if query: 
             self.search = True
             if int(query) == 1:                
-                result = result.filter(Q(car_price__lte = 5000))
+                result = result.filter(Q(car_price__lte = 10000))
             elif int(query) == 2:                
-                result = result.filter(Q(car_price__range = (5000, 10000)))
-            elif int(query) == 3:                
                 result = result.filter(Q(car_price__range = (10000, 15000)))
+            elif int(query) == 3:                
+                result = result.filter(Q(car_price__range = (15000, 20000)))
             else:
-                result = result.filter(Q(car_price__gte = 15000))
+                result = result.filter(Q(car_price__gte = 20000))
                                        
         # Handle area area input              
         query = self.request.GET.get('area')            
