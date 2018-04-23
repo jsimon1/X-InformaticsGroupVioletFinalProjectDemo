@@ -50,7 +50,7 @@ class IndexView(ListView):
             self.search = True
             result = result.filter(Q(car_model__exact = query))
             
-        # Handle caryear input              
+        # Handle caryear input           
         query = self.request.GET.get('caryear')            
         if query: 
             self.search = True
